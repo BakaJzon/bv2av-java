@@ -5,7 +5,10 @@ import java.net.*;
 
 public class Online {
 	
-	public static int toAidOnline(String bvid) throws IOException {
+	private Online() {
+	}
+	
+	public static int toAvidOnline(String bvid) throws IOException {
 		if(!bvid.startsWith("BV")) throw new IllegalArgumentException("bvid starts with \"BV\"");
 		String data = httpString("http://api.bilibili.com/x/web-interface/view?bvid=" + bvid);
 		if(data == null) return -1;
@@ -18,9 +21,9 @@ public class Online {
 		return Integer.parseInt(data.substring(begin, end));
 	}
 	
-	public static String toBvidOnline(int aid) throws IOException {
-		if(aid < 0) throw new IllegalArgumentException("aid starts at 0");
-		String data = httpString("http://api.bilibili.com/x/web-interface/view?aid=" + aid);
+	public static String toBvidOnline(int avid) throws IOException {
+		if(avid < 0) throw new IllegalArgumentException("aid starts at 0");
+		String data = httpString("http://api.bilibili.com/x/web-interface/view?aid=" + avid);
 		if(data == null) return null;
 		int i = data.indexOf("\"bvid\"");
 		if(i == -1) return null;
