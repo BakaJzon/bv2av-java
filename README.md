@@ -22,10 +22,10 @@ javac -s src/ -d bin/ *.java
 
 ``` shell
 #av bv互转，直接输入avid或bvid按回车即可
-java -cp bin/ bakajzon.bv2av.test.AvBvTest
+java -cp bin/ bakajzon.bv2av.test.Converter
 
 #离线版本速度测试
-java -cp bin/ bakajzon.bv2av.test.test2
+java -cp bin/ bakajzon.bv2av.test.PerformanceTest
 ```
 
 
